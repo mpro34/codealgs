@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 /*
@@ -110,6 +111,29 @@ string strCompress(string s) {
     ss.str(std::string());
   }
   return result;
+}
+
+/* 
+ * 1.7 Rotate a input NxN matrix 90 degrees
+ */
+void rotateMat (short** m, short size) {
+  vector<short> temp;
+  vector<short> result;
+  for (short i=0; i<size; ++i) {
+    for (short j=0; j<size; ++j) {
+      temp.push_back(m[i][j]);
+    }
+  }
+  for (short k=0; k<size/2; ++k) {
+    result.push_back(temp[size * 2 + k]);
+    result.push_back(temp[size + k]);
+    result.push_back(temp[k]);
+  }
+  for (short l=0; l<size; ++l) {
+    for (short a=0; a<size; ++a) {
+      m[l][a] = result[l+a];
+    }
+  }
 }
 
 
