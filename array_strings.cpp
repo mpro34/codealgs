@@ -1,6 +1,9 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sstream>
 
 using namespace std;
 /*
@@ -49,6 +52,65 @@ string URLify (string s, int size) {
   return s;
 }
 
+/*
+ * 1.4 Check if input string is a permuation of a palindrome
+ */
+bool palinPermu (string s) {
+  int sum=0;
+  map<char,int> hasht;
+  for (int i=0; i < s.size(); ++i) {
+    hasht[s.at(i)] += 1;
+  }
+  for (map<char,int>::iterator it=hasht.begin(); it != hasht.end(); ++it) {
+    if (it->second >= 2) {
+      sum += it->second;
+    }
+  }
+  if (sum != ( s.size()-1 )) {
+    return false;
+  }
+  return true;
+}
+
+/*
+ * 1.5 Check if input of two strings is one edit away
+ */
+bool oneAway (string a, string b) {
+  int sumA, sumB, strSize = 0;
+  if (abs(a.size() - b.size()) > 1) 
+    return false;
+  for (int i=0; i<a.size(); ++i) {
+    sumA += a.at(i);
+  }
+  for (int j=0; j<b.size(); ++j) {
+    sumB += b.at(j);
+  }
+  if ( (abs(sumA-sumB) < 97) || (abs(sumA-sumB) > 122) ) {
+    return false;
+  }
+  return true;
+}
+
+/*
+ * 1.6 Compress the input string by adding numbers
+ */
+string strCompress(string s) {
+  int count=0;
+  string result="";
+  stringstream ss;
+  for (int i=0; i<s.size(); ++i) {
+    result += s.at(i);
+    i = count;
+    while (s.at(i) == s.at(count)) {
+      count++;
+    }
+    int x = count - i;
+    ss << x;
+    result += ss.str();
+    ss.str(std::string());
+  }
+  return result;
+}
 
 
 int main() {
@@ -63,6 +125,16 @@ int main() {
   string s = "Chris whiting is me         ";
   int s_size = s.size();
   cout << URLify(s, s_size) << endl;
+//1.4
+  string c = "Tact coa";
+  cout << palinPermu(s) << endl;
+//1.5
+  string d = "bale";
+  string e = "kale";
+  cout << oneAway(d, e) << endl;
+//1.6
+  string f = "aaabbd";
+  cout << strCompress(f) << endl;
 
   return 0;
 }
