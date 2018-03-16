@@ -1,4 +1,6 @@
 //CodeRust Interview Questions - Linked Lists
+/* REVIEW Linked Lists traversal with JS pointers, Insertion Sort with Linked Lists, Merge Sort with Linked Lists */
+
 
 /* 1. Reverse a singly linked list
   * A. Given the pointer/reference to the head of a singly linked list, reverse it and return the pointer/reference to the head of reversed linked list.
@@ -160,11 +162,62 @@ let swapNthwithHead = function(head, n) {
 /* TODO NOTES -  Swapping pointers should be done like the Above */
 
 
-/* 8.
-  * A.
+/* 8. Merge Two Sorted Linked Lists
+  * A. Given two sorted linked lists, merge them such that resulting linked list is also sorted.
+  * B. Given two LL as input, create a resulting third Linked List. Traverse each LL and determine if the current Node is > other LL, if so then add to result LL, else, see other LL.
+*/
+let mergeLinkedLists = function(head1, head2) {
+  let retVal = null;
+  let curr1 = head1;
+  let curr2 = head2;
+
+  while(curr1) {
+    if (curr1.data < curr2.data) {
+      retVal.next = curr1;
+      curr1 = curr1.next;
+    }
+    else {
+      retVal.next = curr2;
+      curr2 = curr2.next;
+    }
+    retVal = retVal.next;
+  }
+  return retVal;
+}
+//  Time - O(m + n)
+//  Space - O(1)
+/* TODO NOTES -  */
+
+
+/* 9. Merge Sort
+  * A. Given head pointer of a linked sort, sort linked list (in ascending order) using merge sort and return new head pointer of sorted linked list.
+  * B. We split the input Linkedlist into two parts and keep doing so with the subsequent parts, until each part is 0 or 1 in length. Then we bring them together in a sorted order until we combine all sub-parts.
+*/
+let mergeSort = function(head) {
+  //Need a separate function that will split the input LL. This can use the Runner technique to see where the half-way point is.
+}
+//  Time - O(nlogn)
+//  Space - O(logn)
+/* TODO NOTES - Understand how Merge Sort works, since it's a very popular alg with Linked Lists! */
+
+
+/* 10. Reverse Even Nodes
+  * A. Given a singly linked list, reverse nodes at even indices.
+  * B. We will traverse input LL and add even numbered Links to a new Linked List. Then once the input LL is traversed, we alternatingly merge sort both linked lists into the result one.
+*/
+let reverseEvenNodes = function() {
+
+}
+//  Time - O(n)
+//  Space - O(1)
+/* TODO NOTES -  Create Separate smaller functions that call each other so that each smaller function can focus on 1 task!*/
+
+
+/* 11. Rotate a Linked List
+  * A. Given head node of a singly linked list and an integer 'n', rotate linked list by 'n'.
   * B.
 */
-let  = function() {
+let rotateALinkedList = function() {
 
 }
 //  Time - O()
@@ -172,11 +225,11 @@ let  = function() {
 /* TODO NOTES -  */
 
 
-/* 9.
-  * A.
+/* 12. Reverse K elements
+  * A. Given a singly linked list and an integer 'k', reverse every 'k' elements. If k <= 1, then input list is unchanged. If k >= n (n is the length of linked list), then reverse the whole linked list.
   * B.
 */
-let  = function() {
+let reverseKElements = function() {
 
 }
 //  Time - O()
@@ -184,11 +237,11 @@ let  = function() {
 /* TODO NOTES -  */
 
 
-/* 10.
-  * A.
+/* 13. Add Two Integers
+  * A. Given head pointers of two linked lists where each linked list represents an integer number (each node is a digit), add them and return the resulting linked list.
   * B.
 */
-let  = function() {
+let addTwoIntegers = function() {
 
 }
 //  Time - O()
@@ -196,47 +249,11 @@ let  = function() {
 /* TODO NOTES -  */
 
 
-/* 11.
-  * A.
+/* 14. Copy Linked list with Arbitrary Pointer
+  * A. Make a deep copy of the given linked list with each node having two pointers: 'next' and 'arbitrary_pointer'.
   * B.
 */
-let  = function() {
-
-}
-//  Time - O()
-//  Space - O()
-/* TODO NOTES -  */
-
-
-/* 12.
-  * A.
-  * B.
-*/
-let  = function() {
-
-}
-//  Time - O()
-//  Space - O()
-/* TODO NOTES -  */
-
-
-/* 13.
-  * A.
-  * B.
-*/
-let  = function() {
-
-}
-//  Time - O()
-//  Space - O()
-/* TODO NOTES -  */
-
-
-/* 14.
-  * A.
-  * B.
-*/
-let  = function() {
+let deepCopyLinkedList = function() {
 
 }
 //  Time - O()

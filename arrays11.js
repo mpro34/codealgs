@@ -1,4 +1,5 @@
 //CodeRust Interview Questions - Arrays
+/* REVIEW Using Pointers to loop through arrays, Binary Search with pointers, Kadane's Alg for Subarrays, Quick Sort with pivot points.
 
 /* 1. Binary Seach
   * A. Given a sorted array of integers, return the index of the given key. Return -1 if not found.
