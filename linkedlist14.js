@@ -215,19 +215,19 @@ let reverseEvenNodes = function() {
 
 /* 11. Rotate a Linked List
   * A. Given head node of a singly linked list and an integer 'n', rotate linked list by 'n'.
-  * B.
+  * B. Basically Advance 1 pointer to n, start a second pointer at head. Move until n pointer reaches end of LL. Then move pointers to rearrange rotated portion!
 */
-let rotateALinkedList = function() {
+let rotateALinkedList = function(head, n) {
 
 }
 //  Time - O()
 //  Space - O()
-/* TODO NOTES -  */
+/* TODO NOTES - Understand how to use pointers, reassign them, etc. */
 
 
 /* 12. Reverse K elements
   * A. Given a singly linked list and an integer 'k', reverse every 'k' elements. If k <= 1, then input list is unchanged. If k >= n (n is the length of linked list), then reverse the whole linked list.
-  * B.
+  * B. Go through the input Linked List and create a separate function to reverse an input LL. Provide every k length LL to this new function until you reach null, which then place whatever you have left (k-1, k-1, etc.)
 */
 let reverseKElements = function() {
 
@@ -239,9 +239,9 @@ let reverseKElements = function() {
 
 /* 13. Add Two Integers
   * A. Given head pointers of two linked lists where each linked list represents an integer number (each node is a digit), add them and return the resulting linked list.
-  * B.
+  * B. Assumming both LL are of the same length. I will create a carry variable and result LL variable. Add each node of both head1 and head2, if the result is > 9, then we add a 1 node and carry digit goes to the remainder (ex. 7+5 = 1 node and 2 carry digit). Once all Nodes have been looped, then add one last node for whatever in the carry digit.
 */
-let addTwoIntegers = function() {
+let addTwoIntegers = function(head1, head2) {
 
 }
 //  Time - O()
